@@ -21,7 +21,7 @@ const DitelesPage = async ({ params }: { params: Promise<{ newsID: string }> }) 
 
                 {/* Topics */}
                 <div className="flex flex-wrap gap-2 mb-5">
-                    {dietelsData.topics?.map((topic) => (
+                    {dietelsData?.topics?.map((topic) => (
                         <span
                             key={topic.id}
                             className="text-sm font-medium text-red-600 bg-red-50 px-3 py-1 rounded-full"
@@ -33,13 +33,13 @@ const DitelesPage = async ({ params }: { params: Promise<{ newsID: string }> }) 
 
                 {/* Title */}
                 <h1 className="text-3xl md:text-5xl font-bold leading-tight text-gray-900">
-                    {dietelsData.title}
+                    {dietelsData?.title}
                 </h1>
 
                 {/* Description */}
                 <p className="mt-5 max-w-4xl text-lg md:text-xl leading-8 text-gray-600">
                     {
-                        dietelsData.description?.blocks?.[0]
+                        dietelsData?.description?.blocks?.[0]
                             ?.model?.blocks?.[0]?.model?.text
                     }
                 </p>
@@ -47,7 +47,7 @@ const DitelesPage = async ({ params }: { params: Promise<{ newsID: string }> }) 
                 {/* Author + Date */}
                 <div className="flex flex-wrap items-center gap-4 mt-6 pb-6 border-b">
 
-                    {dietelsData.byline?.map((author) => (
+                    {dietelsData?.byline?.map((author) => (
                         <div key={author.name}>
                             <p className="font-semibold text-gray-900">
                                 {author.name}
@@ -63,7 +63,7 @@ const DitelesPage = async ({ params }: { params: Promise<{ newsID: string }> }) 
 
                     <p className="text-sm text-gray-500">
                         {new Date(
-                            dietelsData.firstPublished
+                            dietelsData?.firstPublished
                         ).toLocaleDateString("bn-BD", {
                             year: "numeric",
                             month: "long",
@@ -80,7 +80,7 @@ const DitelesPage = async ({ params }: { params: Promise<{ newsID: string }> }) 
             <article className="max-w-5xl mx-auto px-4 md:px-6">
 
                 {/* Hero Image */}
-                <figure className="mt-8">
+                {/* <figure className="mt-8">
 
                     <div className="relative w-full aspect-video overflow-hidden rounded-xl">
                         <Image
@@ -92,13 +92,13 @@ const DitelesPage = async ({ params }: { params: Promise<{ newsID: string }> }) 
                         />
                     </div>
 
-                </figure>
+                </figure> */}
 
 
                 {/* Body */}
                 <div className="max-w-4xl mt-8 pb-12">
 
-                    {dietelsData.body?.map((item, index) => {
+                    {dietelsData?.body?.map((item, index) => {
 
                         {/* Text */}
                         if (item.type === "text") {
@@ -166,7 +166,7 @@ const DitelesPage = async ({ params }: { params: Promise<{ newsID: string }> }) 
                 <div className="max-w-4xl border-t py-6 text-sm text-gray-500">
                     Source:{" "}
                     <span className="font-semibold text-gray-700">
-                        {dietelsData.source}
+                        {dietelsData?.source}
                     </span>
                 </div>
 

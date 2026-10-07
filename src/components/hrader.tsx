@@ -1,9 +1,14 @@
+
+
 import Image from 'next/image';
 import React from 'react';
 import NavLinks from './navLinks';
+import UserData from './userData';
 
 
 const HeaderPage = () => {
+
+    // const session = useSession()
 
     const date = new Date().toLocaleDateString("bn-BD", {
         dateStyle : "full"
@@ -19,11 +24,9 @@ const HeaderPage = () => {
                 </div>
             </div>
 
-            <div className='flex gap-2'>
-                <button className='btn'>সাইন ইন</button>
-                <button className='btn bg-red-900 text-white'>সাইন আপ</button>
+            <UserData></UserData>
 
-            </div>
+           {/*  */}
         </div>
         <NavLinks></NavLinks>
         </div>

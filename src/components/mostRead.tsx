@@ -1,4 +1,5 @@
 
+import Link from 'next/link';
 import React from 'react';
 
 interface INews {
@@ -25,9 +26,10 @@ const MostRead = async() => {
   {/* Most Read News */}
   <div>
     {mostRead.map((news, ind) => (
+     <Link key={news.id} href={`/diteles/${news.id}`}>
       <div
         className="flex gap-4 py-4 border-b border-gray-200 last:border-b-0"
-        key={news.id}
+        
       >
         {/* Number */}
         <p className="text-2xl font-bold text-red-700 w-7 shrink-0">
@@ -39,6 +41,7 @@ const MostRead = async() => {
           {news.title}
         </h3>
       </div>
+     </Link>
     ))}
   </div>
 

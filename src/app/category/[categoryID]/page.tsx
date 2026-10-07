@@ -18,7 +18,7 @@ const CategoryPage = async ({params}: {params: Promise<{categoryID: string}>}) =
     const data = await res.json()
 
     const categoryNews : INews[] = data.data
-    console.log(data)
+    
     return (
         <div className='mt-5'>
             <div className='border-b-2 border-red-900'>
